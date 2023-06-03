@@ -1,5 +1,5 @@
+const { faker } = require('@faker-js/faker');
 const express = require('express');
-const faker = require('faker');
 
 const router = express.Router();
 
@@ -27,6 +27,14 @@ router.get('/:id', (req, res) => {
     id,
     name: 'Product 2',
     price: 2000
+  });
+});
+
+router.post('/', (req, res) => {
+  const body = req.body;
+  res.json({
+    message: 'created',
+    data: body
   });
 });
 
